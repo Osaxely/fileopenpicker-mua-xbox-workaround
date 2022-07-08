@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="FilePickerMultiContextTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Black"
+    RequestedTheme="Dark">
+
+    <Grid BorderBrush="White" BorderThickness="1" Padding="16" CornerRadius="4">
+        <StackPanel>
+            <TextBlock Text="FileOpenPicker Workaround for Xbox MUA" Style="{ThemeResource TitleTextBlockStyle}" TextAlignment="Center" />
+            <TextBlock Text="This sample explains how to fix the 'Invalid Window Handle' issue when trying to show a FileOpenPicker that was created with CreateForUser, on a MUA." HorizontalAlignment="Center" Opacity="0.7" />
+        </StackPanel>
+        <StackPanel Spacing="12" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="TestPickerButton" Content="Open a File Picker (Multi-user)" HorizontalAlignment="Center" />
+            <TextBlock x:Name="StatusText" Text="Status" HorizontalAlignment="Center" Opacity="0.7" />
+        </StackPanel>
+    </Grid>
+</Page>
