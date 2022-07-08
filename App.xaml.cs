@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.System;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -21,7 +21,6 @@ namespace FilePickerMultiContextTest
         {
             InitializeComponent();
             RequiresPointerMode = ApplicationRequiresPointerMode.WhenRequested;
-            Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
             Suspending += OnSuspending;
         }
 
@@ -63,6 +62,7 @@ namespace FilePickerMultiContextTest
                 }
 
                 // Ensure the current window is active
+                ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
                 Window.Current.Activate();
             }
         }
